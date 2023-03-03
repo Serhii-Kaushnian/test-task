@@ -23,6 +23,10 @@ function Card() {
     const user = localStorage.getItem("follow");
     const parsedUser = JSON.parse(user);
 
+    if (!user) {
+      return;
+    }
+
     if (parsedUser.follow) {
       setFollowers(parsedUser.amount);
       setsSbscription(parsedUser.follow);
